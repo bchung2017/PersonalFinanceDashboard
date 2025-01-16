@@ -1,0 +1,119 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.button-link {
+    text-decoration: none;
+    color: white !important;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color: #12161d;
+  color: #fff;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+.e-bigger {
+    font-size: x-large;
+}
+
+.btn:focus, .btn:active{
+    outline:none !important;
+    box-shadow:none;
+}
+
+.no-a-decoration, .no-a-decoration:hover{
+    text-decoration: none;
+    color:inherit;
+}
+
+.e-grid {
+    border: 0;
+    border-radius: 5px;
+}
+
+e-btn-group.custom-rbt-group {
+    width: 100%;
+}
+
+.e-btn-group.custom-rbt-group .e-btn {
+    width: 50%;
+}
+
+.widget {
+    border-radius: 1rem;
+    background-color: #1a222b;
+}
+
+.e-grid {
+    border-radius: 10px;
+}
+
+.e-gridheader {
+    border-radius: 10px 10px 0 0;
+}
+
+.e-grid .e-gridpager {
+    border-radius: 0 0 10px 10px;
+}
+
+.main-content {
+    margin-left: 290px;
+}
+
+#sidebar {
+    background-color: #12161d;
+    border-right: 1px dashed rgba(75, 82, 85, 0.24);
+    padding: 10px 20px;
+}
+/*.custom-rbt-group label.e-btn {
+    box-shadow: none !important;
+    border: 1px solid #fff;
+    background-color: rgb(34 43 51);
+    color: #fff;
+}
+
+.e-btn-group.custom-rbt-group input:checked + label.e-btn {
+    background-color: #fff;
+    color: #212b36;
+    border: 1px solid #fff;
+}*/

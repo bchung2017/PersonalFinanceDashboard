@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ExpenseTracker.Models.Transaction>
+
+@{
+    ViewData["PageTitle"] = "Transactions";
+    ViewData["PageActionText"] = "+ New Transaction";
+    ViewData["PageActionUrl"] = "/Transaction/AddOrEdit";
+}
+
+<div class="row">
+    <div class="col-md-7">
+        <ejs-grid id="transactions" dataSource="@Model" gridLines="None" allowSorting="true" allowPaging="true">
+            <e-grid-columns>
+                <e-grid-pageSettings pageSize="10"></e-grid-pageSettings>
+                <e-grid-column headerText="Categories" field="CategoryTitleWithIcon"></e-grid-column>
+                <e-grid-column headerText="Date" field="Date" width="150px" type="date" format="MMM-dd-yy" textAlign="Left"></e-grid-column>
+                <e-grid-column headerText="Amount" field="FormattedAmount" width="110px" textAlign="Right"></e-grid-column>
+                <e-grid-column headerText="Actions" template="#actionColumnTemplate" width="100px"></e-grid-column>
+            </e-grid-columns>
+        </ejs-grid>
+    </div>
+    <div class="col-md-5">
+        <div class="widget h-100 d-flex justify-content-center align-items-center" style="background-color:#212b36">
+            <i class="fa-solid fa-shapes fa-2xl"></i>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script type="text/x-template" id="typeColumnTemplate">
+    ${typeColumnTemplate(Type)}
+</script>
+
+<script>
+    function typeColumnTemplate(Type) {
+        if (Type === "Income") {
+            return `<span class="badge bg-success">${Type}</span>`;
+        } else if (Type === "Expense") {
+            return `<span class="badge bg-danger">${Type}</span>`;
+        } else {
+            return `<span>${Type}</span>`;
+        }
+    }
+</script>
+
+<script id="actionColumnTemplate">
+    <div class="d-flex flex-row justify-content-start">
+        <a class="btn btn-sm no-a-decoration" href="/Transaction/AddOrEdit/${TransactionId}">
+            <i class="fa-solid fa-pen fa-lg"></i>
+        </a>
+        <form action="/Transaction/Delete/${TransactionId}" method="post">
+    @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-sm btn-link no-a-decoration" onclick="return confirm(&quot;Delete record?&quot;)">
+                <i class="fa-solid fa-trash-can fa-lg text-danger"></i>
+            </button>
+        </form>
+    </div>
+</script>
