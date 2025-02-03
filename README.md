@@ -5,5 +5,6 @@ System features:
 -Syncfusion SDK for clean UI and data visualization
 -SQLite database for lightweight hosting solutions
 -Custom emoji keyboard for categories
+-Hosted online through Azure Web Services
 
 Online version is available to test here: https://bit.ly/3En3SIs
